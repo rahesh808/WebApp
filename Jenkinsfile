@@ -17,7 +17,7 @@ pipeline {
       parallel {
         stage('UI Testing(Smoke)') {
           steps {
-            echo 'API Test success'
+            echo 'UI Test success'
           }
         }
 
@@ -38,13 +38,14 @@ pipeline {
 
     stage('Deploy to QAT') {
       steps {
-        echo 'depoyed to qat'
+        echo 'deployed to qat'
       }
     }
 
     stage('certify to UAT') {
       steps {
         echo 'certified to UAT'
+        input 'Do u want to get certificate'
       }
     }
 
