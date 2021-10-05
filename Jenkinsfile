@@ -43,6 +43,9 @@ pipeline {
     }
 
     stage('certify to UAT') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'certified to UAT'
         input 'Do u want to get certificate'
@@ -50,6 +53,9 @@ pipeline {
     }
 
     stage('Prod deploy') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'Deployed to Production'
       }
